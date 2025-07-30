@@ -26,14 +26,31 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app requires access to your local network to discover and connect to devices.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_http._tcp</string>
+	</array>
+	<key>NSCalendersFullAccessUsageDescription</key>
+	<string>This app requires access to your calendar to manage events.</string>
+	<key>NSCalendersWrittenOnlyAccessUsageDescription</key>
+	<string>This app requires access to your calendar to manage events.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>This app requires access to your documents folder to save and manage files.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>${PRODUCT_NAME} requires access to your camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>${PRODUCT_NAME} requires access to your photo library.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>${PRODUCT_NAME} requires access to your microphone.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -46,7 +63,29 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Bold.ttf</string>
+		<string>Inter-ExtraBold.ttf</string>
+		<string>Inter-ExtraLight.ttf</string>
+		<string>Inter-Light.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-SemiBold.ttf</string>
+		<string>Inter-Thin.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Iconsicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>Okra-Bold.ttf</string>
+		<string>Okra-ExtraBold.ttf</string>
+		<string>Okra-Medium.ttf</string>
+		<string>Okra-MediumLight.ttf</string>
+		<string>Okra-Regular.ttf</string>
+	</array>
 </dict>
 </plist>
