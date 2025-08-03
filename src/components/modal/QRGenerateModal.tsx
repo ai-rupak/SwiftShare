@@ -19,12 +19,18 @@ import { multiColor } from '../../utils/Constants';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomText from '../global/CustomText';
 import Icon from '../global/Icon';
+import { useTCP } from '../../service/TCPProvider';
+import DeviceInfo from 'react-native-device-info';
+import { getLocalIPAddress } from '../../utils/networkUtils';
+import { navigate } from '../../utils/NavigationUtil';
 interface ModalProps {
   visible: boolean;
   onClose: () => void;
 }
 
 const QRGenerateModal: FC<ModalProps> = ({ visible, onClose }) => {
+
+  const {isConnected , startServer , server} = useTCP()
   const [loading, setLoading] = useState(true);
   const [qrValue, setQRValue] = useState('Rupak');
   const shimmerTranslateX = useSharedValue(-300);
@@ -32,13 +38,44 @@ const QRGenerateModal: FC<ModalProps> = ({ visible, onClose }) => {
     transform: [{ translateX: shimmerTranslateX.value }],
   }));
 
+  const setupServer = async () => {
+  const deviceName = await DeviceInfo.getDeviceName()
+  const ip = await getLocalIPAddress()
+  const port = 4000;
+
+  if (server) {
+    setQRValue(`tcp://${ip}:${port}|${deviceName}`)
+    setLoading(false)
+    return;
+  }
+
+  startServer(port)
+  setQRValue(`tcp://${ip}:${port}|${deviceName}`)
+  console.log(`Server Info: ${ip}:${port}`)
+  setLoading(false)
+}
+
   useEffect(() => {
     shimmerTranslateX.value = withRepeat(
       withTiming(300, { duration: 1500, easing: Easing.linear }),
       -1,
       false,
     );
+
+    if(visible){
+      setLoading(true)
+      setupServer();
+    }
   }, [visible]);
+
+  useEffect(() => {
+  console.log('TCPProvider: isConnected updated to', isConnected);
+  if (isConnected) {
+    onClose()
+    navigate('ConnectionScreen')
+  }
+}, [isConnected])
+
   return (
     <Modal
       animationType="slide"

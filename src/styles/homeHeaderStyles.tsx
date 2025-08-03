@@ -19,7 +19,10 @@ export const homeHeaderStyles = StyleSheet.create({
     logo: {
         width: screenWidth * 0.4,
         height: screenHeight * 0.048,
-        resizeMode: 'contain',
+        resizeMode: 'cover',
+        //extra
+        // backgroundColor:'#000',
+        // borderRadius:100
     },
     profile: {
         width: 45,

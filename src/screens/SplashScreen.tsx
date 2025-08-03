@@ -15,7 +15,7 @@ const SplashScreen: FC = () => {
     <View style={commonStyles.container}>
       <Image
         style={commonStyles.img}
-        source={require('../assets/images/logo_text.png')}
+        source={require('../assets/images/SwiftShare.png')}
       />
       <Text
         style={{

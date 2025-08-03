@@ -8,8 +8,11 @@ const SendReciveButton:FC = () => {
     <View style={styles.container}>
       <TouchableOpacity
       style={styles.button}
-      onPress={()=>navigate("SendScreen")}
-      >
+      onPress={() => {
+        console.log('Send button pressed');
+        navigate("SendScreen");
+      }}
+        >
         <Image
         source={require('../../assets/icons/send.jpg')}
          style={styles.img}/>
@@ -18,7 +21,7 @@ const SendReciveButton:FC = () => {
 
     <TouchableOpacity
       style={styles.button}
-      onPress={()=>navigate("RecieveScreen")}
+      onPress={() => navigate('RecieveScreen')}
       >
         <Image
         source={require('../../assets/icons/receive.jpg')}

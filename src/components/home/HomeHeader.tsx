@@ -32,7 +32,7 @@ const HomeHeader = () => {
           <Icon iconFamily='MaterialIcons' name='menu' size={22} color='#fff' />
         </TouchableOpacity>
         <Image
-          source={require('../../assets/images/logo_t.png')}
+          source={require('../../assets/images/SwiftShare2.png')}
           style={homeHeaderStyles.logo}
         />
       <TouchableOpacity

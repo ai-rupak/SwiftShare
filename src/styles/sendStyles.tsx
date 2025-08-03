@@ -5,6 +5,8 @@ export const sendStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#85CAFB",
+        width:'100%',
+        height: '100%',
     },
     mainContainer: {
         flex: 1,

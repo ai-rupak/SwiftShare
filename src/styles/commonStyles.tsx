@@ -13,8 +13,8 @@ export const commonStyles = StyleSheet.create({
         backgroundColor: Colors.background
     },
     img: {
-        width: screenWidth * 0.5,
-        height: screenWidth * 0.5,
+        width: screenWidth * 0.7,
+        height: screenWidth * 0.7,
         resizeMode: 'contain'
     },
     flexRowBetween: {
